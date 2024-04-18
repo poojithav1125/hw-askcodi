@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Housing Website</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+    }
+    section {
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .house {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 10px;
+        padding: 10px;
+        background-color: #fff;
+        overflow: hidden;
+        width: 300px;
+    }
+    .house img {
+        width: 100%;
+        height: auto;
+    }
+    form {
+        margin-top: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+    }
+</style>
+</head>
+<body>
+<header>
+    <h1>Welcome to our Housing Website</h1>
+    <button>Home</button>
+    <button>Houses List</button>
+    <button onclick="showSignIn()">Sign In</button>
+    <button onclick="showRegistration()">Register</button>
+</header>
+<section>
+    <div class="house" onclick="showHouseDetails(1)">
+        <img src="house1.jpg" alt="House 1">
+        <h2>House 1</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget purus nulla.</p>
+        <p>Price: $500,000</p>
+    </div>
+    <div class="house" onclick="showHouseDetails(2)">
+        <img src="house2.jpg" alt="House 2">
+        <h2>House 2</h2>
+        <p>Phasellus nec tortor efficitur, condimentum libero sit amet, tristique lectus.</p>
+        <p>Price: $700,000</p>
+    </div>
+    <div class="house" onclick="showHouseDetails(3)">
+        <img src="house3.jpg" alt="House 3">
+        <h2>House 3</h2>
+        <p>Nullam interdum nec justo eu dignissim.</p>
+        <p>Price: $800,000</p>
+    </div>
+</section>
+<form id="sign-in-form" style="display: none;">
+    <h2>Sign In</h2>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username">
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+    <button>Sign In</button>
+</form>
+<form id="registration-form" style="display: none;">
+    <h2>Registration</h2>
+    <label for="new-username">Username:</label>
+    <input type="text" id="new-username" name="new-username">
+    <label for="new-password">Password:</label>
+    <input type="password" id="new-password" name="new-password">
+    <button>Register</button>
+</form>
+<script>
+    function showHouseDetails(houseId) {
+        alert("Displaying details of House " + houseId);
+        // Additional functionality to display house details can be added here
+    }
+
+    function showSignIn() {
+        document.getElementById("sign-in-form").style.display = "block";
+        document.getElementById("registration-form").style.display = "none";
+    }
+
+    function showRegistration() {
+        document.getElementById("registration-form").style.display = "block";
+        document.getElementById("sign-in-form").style.display = "none";
+    }
+</script>
+</body>
+</html>
